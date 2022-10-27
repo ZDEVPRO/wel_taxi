@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyurtmalar</title>
+    <style>
+        * {
+            font-size: 55px;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .order-item {
+            padding: 50px;
+            background-color: #161828;
+            color: white;
+            position: center;
+            min-width: 250px;
+            min-height: 80px;
+            width: auto;
+            height: auto;
+            border-radius: 5px;
+            text-align: center;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+
+        .submit-button {
+            padding: 10px;
+            background-color: #0088D1;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            width: 80%;
+            margin-bottom: 20px;
+        }
+
+        input {
+            padding: 20px;
+            width: 90%;
+            height: 50px;
+            margin-bottom: 30px;
+            font-size: 40px;
+            border-radius: 15px;
+        }
+
+        .green-button {
+            padding: 20px;
+            background-color: green;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 45px;
+            margin-left: 10px;
+        }
+
+        .red-button {
+            padding: 20px;
+            background-color: darkred;
+            border: none;
+            border-radius: 10px;
+            color: white;
+            font-size: 45px;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="screen">
+    <div class="order-item">
+        <h2>Malumotlaringiz to'g'riligiga ishonch hosil qiling!</h2>
+        <h2>Buyurtma haqida malumot</h2>
+        <h3>Telefon raqam: {{ order.client_phone }}</h3>
+        <h3>Yo'nalish: {{ order.qayerdan }}dan => {{ order.qayerga }}ga</h3>
+        <h3>Narxingiz: {{ order.price }}</h3>
+        <h3>Odam soni: {{ order.person_count }} ta</h3>
+        <br>
+        <a href="{% url 'delete-order' order.id %}">
+            <button class="red-button">BEKOR QILISH</button>
+        </a>
+        <a href="{% url 'right-order' order.id %}">
+            <button class="green-button">TO'G'RI</button>
+        </a>
+    </div>
+</section>
+
+</body>
+</html>

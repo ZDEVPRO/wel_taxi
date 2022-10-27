@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Buyurtmalar</title>
+    <style>
+        * {
+            font-size: 55px;
+        }
+
+        body {
+            background-color: black;
+        }
+
+        .order-item {
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 10px;
+            padding-bottom: 50px;
+            background-color: #161828;
+            color: white;
+            position: center;
+            width: auto;
+            max-width: 100%;
+            height: 780px;
+            border-radius: 5px;
+            margin: 25px 20px 15px;
+            text-align: center;
+        }
+
+        .green-button {
+            background-color: green;
+            color: white;
+            width: 100%;
+        }
+
+        .redd-button {
+            width: 100%;
+            background-color: darkred;
+        }
+    </style>
+</head>
+<body>
+
+{% block header %}{% include 'customer/header.html' %}{% endblock %}
+
+<section class="screen">
+    <div class="order-item">
+        {% if order.status == 'yangi' %}
+            <h3>Elon hali ham aktiv</h3>
+        {% elif order.status == 'olindi' %}
+            <h3 style="color: green;">Haydovchi buyurtmangizni qabul qildi!</h3>
+            <h3 style="color: green;">Haydovchi telefon raqami: {{ order.driver.phone }}</h3>
+        {% endif %}
+        <h3>Buyurtmangiz haqida malumot</h3>
+        <h3>Yo'nalish: {{ order.qayerdan }} => {{ order.qayerga }}</h3>
+        <h3>Odam soni: {{ order.person_count }} ta</h3>
+        <br>
+        {% if order.status == 'olindi' and order.driver %}
+            <a href="{% url 'black-list' order.id %}">
+                <button style="margin-bottom: 30px;" class="redd-button" type="submit">Haydovchi mendan uzoqda</button>
+            </a>
+        {% endif %}
+        <a href="{% url 'delete-order' order.id %}">
+            <button class="redd-button" type="submit">Buyurtmani bekor qilish</button>
+        </a>
+    </div>
+</section>
+
+</body>
+</html>

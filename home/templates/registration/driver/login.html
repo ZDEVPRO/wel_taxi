@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Haydovchi sifatida kirish</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'font/flaticon.css' %}">
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<section class="fxt-template-animation fxt-template-layout30 loaded">
+    <!-- Star Animation Start Here -->
+    <canvas id="canvas" width="390" height="844"></canvas>
+    <!-- Star Animation End Here -->
+    <div class="fxt-content">
+        <div class="fxt-header">
+            <a class="fxt-logo"><h1><b>WELL TAXI</b></h1></a>
+        </div>
+        <div class="fxt-form">
+            <p style="text-align: center;">Haydovchi sifatida kirish <br>Kirish uchun bo'limni to'ldiring</p>
+            <form method="POST">{% csrf_token %}
+                <div class="form-group">
+                    <div class="fxt-transformY-50 fxt-transition-delay-1">
+                        <input type="text" class="form-control" name="username" placeholder="Foydalanuvchi nomi"
+                               required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="fxt-transformY-50 fxt-transition-delay-2">
+                        <input type="password" class="form-control" name="password"
+                               placeholder="Sizning parolingiz" required="required">
+                        <i toggle="#password" class="fa fa-fw fa-eye toggle-password field-icon"></i>
+                    </div>
+                </div>
+                <br>
+                <div class="form-group">
+                    <div class="fxt-transformY-50 fxt-transition-delay-4">
+                        <button style="width: 100%;" type="submit" class="fxt-btn-fill">Kirish</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="fxt-style-line">
+            <div class="fxt-transformY-50 fxt-transition-delay-5">
+                <h3>Yoki yo'lovchi bo'lsangiz</h3>
+            </div>
+        </div>
+        <div class="fxt-footer">
+            <div class="fxt-transformY-50 fxt-transition-delay-9">
+                <p>Yo'lovchi sifatida kirish<a href="{% url 'customer-login' %}" class="switcher-text2 inline-text">Kirish</a>
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- jquery-->
+<script src="{% static 'js/jquery-3.5.0.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- Imagesloaded js -->
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<!-- Star Animation js -->
+<script src="{% static 'js/star-animation.js' %}"></script>
+<!-- Validator js -->
+<script src="{% static 'js/validator.min.js' %}"></script>
+<!-- Custom Js -->
+<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+</html>

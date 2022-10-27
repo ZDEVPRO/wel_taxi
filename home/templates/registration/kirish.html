@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Xmee | Login and Register Form Html Templates</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <!-- Fontawesome CSS -->
+    <link rel="stylesheet" href="{% static 'css/fontawesome-all.min.css' %}">
+    <!-- Flaticon CSS -->
+    <link rel="stylesheet" href="{% static 'font/flaticon.css' %}">
+    <!-- Google Web Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&amp;display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+<section class="fxt-template-animation fxt-template-layout30 loaded">
+    <!-- Star Animation Start Here -->
+    <canvas id="canvas" width="390" height="844"></canvas>
+    <!-- Star Animation End Here -->
+    <div class="fxt-content">
+        <div class="fxt-header">
+            <a class="fxt-logo"><h1><b>WELL TAXI</b></h1></a>
+        </div>
+        <div class="fxt-form">
+            <p style="text-align: center;">WELL TAXIGA XUSH KELIBSIZ! <br> SIZ KIMSIZ?</p>
+            <div class="form-group">
+                <div class="fxt-transformY-50 fxt-transition-delay-4">
+                    <a href="{% url 'customer-login' %}">
+                        <button style="width: 100%;" type="submit" class="fxt-btn-fill">YO'LOVCHI</button>
+                    </a>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="fxt-transformY-50 fxt-transition-delay-4">
+                    <a href="{% url 'driver-login' %}">
+                        <button style="width: 100%;" type="submit" class="fxt-btn-fill">HAYDOVCHI</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- jquery-->
+<script src="{% static 'js/jquery-3.5.0.min.js' %}"></script>
+<!-- Bootstrap js -->
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- Imagesloaded js -->
+<script src="{% static 'js/imagesloaded.pkgd.min.js' %}"></script>
+<!-- Star Animation js -->
+<script src="{% static 'js/star-animation.js' %}"></script>
+<!-- Validator js -->
+<script src="{% static 'js/validator.min.js' %}"></script>
+<!-- Custom Js -->
+<script src="{% static 'js/main.js' %}"></script>
+
+
+</body>
+
+</html>
